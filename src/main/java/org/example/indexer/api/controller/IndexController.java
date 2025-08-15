@@ -1,5 +1,6 @@
 package org.example.indexer.api.controller;
 
+import org.example.indexer.api.exception.IndexingProcessingException;
 import org.example.indexer.api.service.IndexService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -24,13 +25,13 @@ public class IndexController {
     try {
       return service.index(file.getInputStream());
     } catch (Exception e) {
-      throw new RuntimeException("Could not read uploaded file", e);
+      throw IndexingProcessingException.badRequest("INDEX_INVALID_FILE", "Could not read uploaded file");
     }
   }
 
   private void validate(MultipartFile file) {
     if (file == null || file.isEmpty()) {
-      throw new RuntimeException("INDEX_MISSING_FILE Required part 'file' is missing or empty");
+      throw IndexingProcessingException.badRequest("INDEX_MISSING_FILE", "Required part 'file' is missing or empty");
     }
   }
 }

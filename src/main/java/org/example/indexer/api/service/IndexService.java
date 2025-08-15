@@ -1,5 +1,6 @@
 package org.example.indexer.api.service;
 
+import org.example.indexer.api.exception.IndexingProcessingException;
 import org.example.indexer.api.util.WordTokenizer;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ public class IndexService {
   private final List<Rule<?>> rules;
 
   public IndexService(List<Rule<?>> rules) {
-    this.rules = rules; // Spring injects all @Component Rule beans
+    this.rules = rules; 
   }
 
   public Map<String, Object> index(InputStream in) {
@@ -23,7 +24,8 @@ public class IndexService {
         WordTokenizer.tokenize(line).forEach(words::add);
       }
     } catch (IOException e) {
-      throw new RuntimeException("Failed to process file", e);
+      throw IndexingProcessingException.internal(
+              "INDEX_IO_ERROR", "Failed to process uploaded file", e);
     }
 
     Map<String, Object> out = new LinkedHashMap<>();
