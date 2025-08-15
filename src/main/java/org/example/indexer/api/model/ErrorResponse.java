@@ -1,4 +1,4 @@
-package org.example.indexer.api.exception;
+package org.example.indexer.api.model;
 
 import java.time.Instant;
 

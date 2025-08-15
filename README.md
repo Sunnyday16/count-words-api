@@ -28,7 +28,7 @@ src/main/java/org/example/indexer
 │   └── controller
 │       └── IndexController.java             # POST /index (multipart upload)
 ├── exception
-│   ├── GlobalExceptionHandler.java         # Maps IndexingProcessingException to JSON
+│   ├── IndexProcessorExceptionHandler.java         # Maps global exception handler 
 │   └── IndexingProcessingException.java    # One exception carrying HttpStatus + domain code
 ├── model
 │   └── ErrorResponse.java                   # error payload DTO (record)
