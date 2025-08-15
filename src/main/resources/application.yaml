@@ -1,0 +1,7 @@
+rules:
+  count-starts-with:
+    name: countStartingWithM
+    letters: "m"
+  longer-than:
+    name: wordsLongerThan5
+    min: 5
