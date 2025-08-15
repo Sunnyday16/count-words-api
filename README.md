@@ -86,6 +86,7 @@ App listens on `http://localhost:8080`.
 **cURL:**
 ```bash
 curl -X POST http://localhost:8080/index   -H "Accept: application/json"   -F "file=@/path/to/input.txt"
+- example input.txt to upload and test is there in resources directory of this project.
 ```
 
 **Example success response (defaults):**
@@ -135,6 +136,14 @@ The `GlobalExceptionHandler` converts it to a consistent JSON body:
   "timestamp": "2025-08-15T12:34:56Z"
 }
 ```
+## OpenAPI Documentation
+
+The API is documented using Springdoc OpenAPI. After starting the application, navigate to:
+
+- OpenAPI JSON: `/v3/api-docs`
+- Swagger UI: `/swagger-ui.html`, `/swagger-ui/index.html`, or `/swagger-ui/index.htm`
+- eg: http://localhost:8080/swagger-ui/index.html
+- example input.txt to upload and test is there in resources directory of this project.
 
 ---
 

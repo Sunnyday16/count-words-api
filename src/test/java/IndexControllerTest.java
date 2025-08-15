@@ -15,6 +15,7 @@ import javax.annotation.Resource;
 import java.util.Map;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 class IndexControllerTest {
@@ -48,4 +49,5 @@ class IndexControllerTest {
       .andExpect(jsonPath("$.countStartingWithM").value(3))
       .andExpect(jsonPath("$.wordsLongerThan5[0]").value("modern"));
   }
+
 }
