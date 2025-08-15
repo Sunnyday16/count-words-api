@@ -14,7 +14,7 @@ We use **one custom exception** (`IndexingProcessingException`) for all error pa
 
 - Java **17** (required for this project)
 - Spring Boot **2.7.6** (Web, Validation, Test)
-- Maven
+- Maven 3.x
 - JUnit 5 + MockMvc
 
 ---
@@ -50,11 +50,26 @@ src/main/java/org/example/indexer
 java -version
 mvn -v
 
-# Build
-mvn clean package
+1. **Clone the repository** or **extract the `count-words-api.zip`** archive
 
-# Run
-java -jar target/*.jar
+   ```bash
+   git clone https://github.com/Sunnyday16/count-words-api.git
+   or extract the `count-words-api.zip 
+   cd count-words-api (go to the count-words-api directory)
+   ```
+
+
+2. **Build with Maven**
+
+   ```bash
+   mvn clean package
+   ```
+
+3. **Run the application**
+
+   ```bash
+   java -jar target/count-words-api-1.0-SNAPSHOT.jar
+   ```jar target/*.jar
 ```
 
 App listens on `http://localhost:8080`.
