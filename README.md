@@ -95,9 +95,6 @@ curl -X POST http://localhost:8080/index   -H "Accept: application/json"   -F "f
   "wordsLongerThan5": ["modern","systems","microservices","metrics","matter"]
 }
 ```
-
-> The two fields are **independent** (not an intersection). Each occurrence is counted; no deduping unless you add a rule for it.
-
 ---
 
 ## Configuration
