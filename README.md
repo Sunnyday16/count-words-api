@@ -69,7 +69,7 @@ mvn -v
 
    ```bash
    java -jar target/count-words-api-1.0-SNAPSHOT.jar
-   ```jar target/*.jar
+ 
 ```
 
 App listens on `http://localhost:8080`.
